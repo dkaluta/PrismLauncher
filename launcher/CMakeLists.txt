@@ -1580,3 +1580,22 @@ if(WIN32 OR (UNIX AND APPLE))
         COMPONENT bundle
     )
 endif()
+
+find_program(CLANG_FORMAT clang-format OPTIONAL)
+if(CLANG_FORMAT)
+    message(STATUS "Creating clang-format target")
+    get_target_property(launcher_sources Launcher_logic SOURCES)
+    if(Launcher_BUILD_UPDATER)
+        get_target_property(updater_sources prism_updater_logic SOURCES)
+    endif()
+    if(WIN32 OR (DEFINED Launcher_BUILD_FILELINKER AND Launcher_BUILD_FILELINKER))
+        get_target_property(filelink_sources filelink_logic SOURCES)
+    endif()
+    add_custom_target(
+        clang-format
+        COMMAND ${CLANG_FORMAT} -i --style=file ${launcher_sources} ${updater_sources} ${filelink_sources}
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/launcher
+    )
+else()
+    message(WARNING "Unable to find `clang-format`. Not creating custom target")
+endif()
