@@ -145,12 +145,9 @@ void legacyInstanceParsing(QString path, std::optional<ModPlatform::ModLoaderTyp
                 break;
             }
         }
-    }
-    catch (const Exception& e)
-    {
+    } catch (const Exception& e) {
         qDebug() << "Couldn't load ftb version json: " << e.cause();
         return;
     }
 }
 }  // namespace FTBImportAPP
-
