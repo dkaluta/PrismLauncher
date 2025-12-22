@@ -26,13 +26,13 @@ set(CORE_SOURCES
     NullInstance.h
     MMCZip.h
     MMCZip.cpp
-    archive/ArchiveReader.cpp  
-    archive/ArchiveReader.h  
-    archive/ArchiveWriter.cpp  
-    archive/ArchiveWriter.h  
-    archive/ExportToZipTask.cpp  
+    archive/ArchiveReader.cpp
+    archive/ArchiveReader.h
+    archive/ArchiveWriter.cpp
+    archive/ArchiveWriter.h
+    archive/ExportToZipTask.cpp
     archive/ExportToZipTask.h
-    archive/ExtractZipTask.cpp  
+    archive/ExtractZipTask.cpp
     archive/ExtractZipTask.h
     StringUtils.h
     StringUtils.cpp
@@ -621,10 +621,10 @@ set(PRISMUPDATER_SOURCES
     # Zip
     MMCZip.h
     MMCZip.cpp
-    archive/ArchiveReader.cpp  
-    archive/ArchiveReader.h  
-    archive/ArchiveWriter.cpp  
-    archive/ArchiveWriter.h  
+    archive/ArchiveReader.cpp
+    archive/ArchiveReader.h
+    archive/ArchiveWriter.cpp
+    archive/ArchiveWriter.h
 
     # Time
     MMCTime.h

@@ -406,14 +406,14 @@ if(UNIX AND APPLE)
             OUTPUT_VARIABLE XCODE_VERSION_OUTPUT
             OUTPUT_STRIP_TRAILING_WHITESPACE
         )
-        
+
         string(REGEX MATCH "Xcode ([0-9]+\.[0-9]+)" XCODE_VERSION_MATCH "${XCODE_VERSION_OUTPUT}")
         if(XCODE_VERSION_MATCH)
             set(XCODE_VERSION ${CMAKE_MATCH_1})
         else()
             set(XCODE_VERSION 0.0)
         endif()
-        
+
         if(XCODE_VERSION VERSION_GREATER_EQUAL 26.0)
             set(ASSETS_OUT_DIR "${CMAKE_BINARY_DIR}/program_info")
             set(GENERATED_ASSETS_CAR "${ASSETS_OUT_DIR}/Assets.car")
@@ -438,12 +438,12 @@ if(UNIX AND APPLE)
         else()
             message(WARNING "Xcode ${XCODE_VERSION} is too old. Minimum required version is 26.0. Not compiling liquid glass icons.")
         endif()
-        
+
     else()
         message(WARNING "actool not found. Cannot compile macOS app icons.\n"
-				"Install Xcode command line tools: 'xcode-select --install'")
+                "Install Xcode command line tools: 'xcode-select --install'")
     endif()
-    
+
 
 elseif(UNIX)
     include(KDEInstallDirs)

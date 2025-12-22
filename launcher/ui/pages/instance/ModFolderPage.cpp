@@ -403,8 +403,8 @@ inline bool ModFolderPage::handleNoModLoader()
             InstallLoaderDialog dialog(profile, QString(), this);
             bool ret = dialog.exec();
             this->m_container->refreshContainer();
-            
-            // returning negation of dialog.exec which'll be true if the install loader dialog got canceled/closed 
+
+            // returning negation of dialog.exec which'll be true if the install loader dialog got canceled/closed
             // and false if the user went through and installed a loader
             return !ret;
         }
